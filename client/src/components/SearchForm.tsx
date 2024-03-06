@@ -1,9 +1,14 @@
 import axios from "axios";
 import { useState } from "react";
 
+interface ISearchResults {
+    title: string;
+    link: string;
+}
+
 export const SearchForm = () => {
   const [inputValue, setInputValue] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState<ISearchResults[]>([]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -30,6 +35,7 @@ export const SearchForm = () => {
   };
 
   return (
+    <>
     <form onSubmit={handleSubmit}>
       <input
         type="text"
@@ -41,5 +47,13 @@ export const SearchForm = () => {
         Sök
       </button>
     </form>
+    {searchResults.map((result, index) => (
+        <div key={index}>
+            <h2>{result.title}</h2>
+            <img src={result.link} alt={result.title} />
+        </div>
+    ))}
+    
+    </>
   );
 };
