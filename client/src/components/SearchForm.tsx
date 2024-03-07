@@ -27,7 +27,7 @@ export const SearchForm = () => {
     try {
       const respone = await axios.get(url);
 
-      console.log(respone.data.items);
+      console.log(respone.data);
 
       setSearchResults(respone.data.items);
     } catch (error) {
