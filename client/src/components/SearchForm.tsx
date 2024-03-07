@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { ISearchResults } from "./models/ISearchResults";
+import { ISearchResults } from "../models/ISearchResults";
 import { SearchResults } from "./SearchResults";
 
 // interface ISearchResults {
