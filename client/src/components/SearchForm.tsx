@@ -1,10 +1,12 @@
 import axios from "axios";
 import { useState } from "react";
+import { ISearchResults } from "./models/ISearchResults";
+import { SearchResults } from "./SearchResults";
 
-interface ISearchResults {
-  title: string;
-  link: string;
-}
+// interface ISearchResults {
+//   title: string;
+//   link: string;
+// }
 
 export const SearchForm = () => {
   const [inputValue, setInputValue] = useState("");
@@ -50,12 +52,7 @@ export const SearchForm = () => {
           Sök
         </button>
       </form>
-      {searchResults.map((result, index) => (
-        <div key={index}>
-          <h2>{result.title}</h2>
-          <img src={result.link} alt={result.title} />
-        </div>
-      ))}
+      <SearchResults results={searchResults} />
     </>
   );
 };
