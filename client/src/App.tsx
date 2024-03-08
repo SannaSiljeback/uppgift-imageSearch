@@ -21,7 +21,6 @@ function App() {
           headers: {
             "Content-Type": "application/json",
           },
-          
         }
       );
 
@@ -30,7 +29,6 @@ function App() {
       console.log("användaren sparades inte", error);
     }
   };
-  
 
   return (
     <>

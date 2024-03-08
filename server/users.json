@@ -1,1 +1,4 @@
-[{"user":"fakeuser","favoriteImage":"fakeurl"},{"user":"fakeuser","favoriteImage":"fakeurl"}]
+[
+  { "user": "fakeuser", "favoriteImage": "fakeurl" },
+  { "user": "fakeuser", "favoriteImage": "fakeurl" }
+]
