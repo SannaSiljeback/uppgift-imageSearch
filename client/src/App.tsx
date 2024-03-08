@@ -9,10 +9,10 @@ function App() {
   const { isAuthenticated } = useAuth0();
 
   const saveUser = async () => {
-    //startas igång när man trycker på en knapp för favvo bilder
+    //startas igång när man trycker på en knapp för favvo bilder?
     try {
       const response = await axios.post(
-        "http://localhost:3001/api/users",
+        "http://localhost:3000/api/users",
         {
           userName: "testUser",
           favoriteImage: "testImage",
@@ -30,6 +30,7 @@ function App() {
       console.log("användaren sparades inte", error);
     }
   };
+  
 
   return (
     <>
