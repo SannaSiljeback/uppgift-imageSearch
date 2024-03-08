@@ -11,6 +11,6 @@ app.use(cors());
 
 app.post("/users", (req, res) => {
     console.log(req.body);
-})
+});
 
 app.listen(3000, () => console.log("Server is upp...".rainbow.bold.italic));
