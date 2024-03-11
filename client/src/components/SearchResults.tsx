@@ -1,18 +1,21 @@
 import React from "react";
 import { ISearchResults } from "../models/ISearchResults";
 import axios from "axios";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export const SearchResults: React.FC<{ results: ISearchResults[] }> = ({
   results,
 }) => {
+  const { user } = useAuth0();
+  console.log(user);
 
   const saveUser = async () => {
     try {
       const response = await axios.post(
         "http://localhost:3000/users",
-        //ska /api vara med innan users?
+
         {
-          userName: "testUser",
+          userId: user?.email,
           favoriteImage: "testImage",
         },
         {
@@ -27,7 +30,6 @@ export const SearchResults: React.FC<{ results: ISearchResults[] }> = ({
       console.log("användaren sparades inte", error);
     }
   };
-
 
   return (
     <>
