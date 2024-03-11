@@ -24,12 +24,13 @@ export const SearchForm = () => {
       import.meta.env.VITE_GOOGLE_ID
     }&num=10&searchType=image&q=${inputValue}&lr=lang_sv`;
 
+    //här ska spelling och time in
+
     try {
       const respone = await axios.get(url);
 
       console.log(respone.data);
       console.log(respone.data.items);
-      
 
       setSearchResults(respone.data.items);
     } catch (error) {
