@@ -28,6 +28,8 @@ export const SearchForm = () => {
       const respone = await axios.get(url);
 
       console.log(respone.data);
+      console.log(respone.data.items);
+      
 
       setSearchResults(respone.data.items);
     } catch (error) {

@@ -1,1 +1,14 @@
-[{"user":"fakeuser","favoriteImage":"fakeurl"},{"user":"fakeuser","favoriteImage":"fakeurl"},{"user":"fakeuser","favoriteImage":"fakeurl"},{"user":"fakeuser","favoriteImage":"fakeurl"},{"userName":"testUser","favoriteImage":"testImage"},{"userName":"testUser","favoriteImage":"testImage"},{"userId":"github|144778923","favoriteImage":"testImage"},{"userId":"google-oauth2|104644270781073577996","favoriteImage":"testImage"},{"userId":"sannasiljeback@gmail.com","favoriteImage":"testImage"},{"favoriteImage":"testImage"},{"userId":"","favoriteImage":"testImage"},{"userId":"github|144778923","favoriteImage":"testImage"},{"userId":"google-oauth2|104644270781073577996","favoriteImage":"testImage"},{"userId":"sannasiljeback@gmail.com","favoriteImage":"testImage"}]
+[
+  {
+    "userId": "sannasiljeback@gmail.com",
+    "favoriteImage": "https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg"
+  },
+  {
+    "userId": "sannasiljeback@gmail.com",
+    "favoriteImage": "https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg"
+  },
+  {
+    "userId": "sannasiljeback@gmail.com",
+    "favoriteImage": "https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg"
+  }
+]
