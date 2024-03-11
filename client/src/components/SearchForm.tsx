@@ -3,11 +3,6 @@ import { useEffect, useState } from "react";
 import { ISearchResults } from "../models/ISearchResults";
 import { SearchResults } from "./SearchResults";
 
-// interface ISearchResults {
-//   title: string;
-//   link: string;
-// }
-
 export const SearchForm = () => {
   const [inputValue, setInputValue] = useState("");
   const [searchResults, setSearchResults] = useState<ISearchResults[]>([]);

@@ -1,4 +1,7 @@
 export interface ISearchResults {
-    title: string;
-    link: string;
+  title: string;
+  image: {
+    byteSize: number;
+  };
+  link: string;
 }
