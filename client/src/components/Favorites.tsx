@@ -1,7 +1,11 @@
 export const Favorites = () => {
-    return (
-      <>
+  //en .filter
+  //en map på favvo image
+  //target favvo
+
+  return (
+    <>
       <button>Visa favoriter</button>
-      </>
-    );
-}
+    </>
+  );
+};
