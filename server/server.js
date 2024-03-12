@@ -24,15 +24,15 @@ app.post("/users", async (req, res) => {
 
     console.log("existingUser:", existingUser);
 
-    if (existingUser === -1) {
+    if (existingUser !== -1) {
+      console.log("lägger bara till en till bild");
+      users[existingUser].favorites.push(favoriteImage);
+    } else {
       console.log("lägger till ny användare med bilder");
       users.push({
         userId,
         favorites: [favoriteImage],
       });
-    } else {
-      console.log("lägger bara till en till bild");
-      users[existingUser].favorites.push(favoriteImage);
     }
 
     await writeFile("users.json", JSON.stringify(users));
