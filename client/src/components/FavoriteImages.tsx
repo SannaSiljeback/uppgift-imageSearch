@@ -1,7 +1,8 @@
 export const FavoriteImages = () => {
-  //en .filter
-  //en map på favvo image
-  //target favvo
+  //ett get anrop från servern
+  //en map på bilderna
+
+ // en get i server sidan på userId
 
   return (
     <>

@@ -14,11 +14,15 @@ app.post("/users", async (req, res) => {
   try {
     console.log("user data", req.body);
 
+    // validering med joi
+
     const data = await readFile("users.json", "utf8");
 
     const users = JSON.parse(data);
 
     users.push(req.body);
+ // kör en find först?
+    //finns användare?
 
     await writeFile("users.json", JSON.stringify(users));
 
