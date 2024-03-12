@@ -1,16 +1,14 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ISearchResults } from "../models/ISearchResults";
 import { SearchResults } from "./SearchResults";
-
-// interface ISearchResults {
-//   title: string;
-//   link: string;
-// }
 
 export const SearchForm = () => {
   const [inputValue, setInputValue] = useState("");
   const [searchResults, setSearchResults] = useState<ISearchResults[]>([]);
+  const [spelling, setSpelling] = useState("");
+  const [time, setTime] = useState(0);
+  const [searchClicked, setSearchClicked] = useState(false);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -22,17 +20,23 @@ export const SearchForm = () => {
       import.meta.env.VITE_API_KEY
     }&cx=${
       import.meta.env.VITE_GOOGLE_ID
-    }&num=10&searchType=image&q=${inputValue}&lr=lang_sv`;
-
-    //här ska spelling och time in
+    }&num=10&searchType=image&q=${inputValue}`;
 
     try {
-      const respone = await axios.get(url);
+      const response = await axios.get(url);
 
-      console.log(respone.data);
-      console.log(respone.data.items);
+      setTime(response.data.searchInformation.searchTime);
 
-      setSearchResults(respone.data.items);
+      if (response.data.spelling && response.data.spelling.correctedQuery) {
+        setSpelling(response.data.spelling.correctedQuery);
+      } else {
+        setSpelling("");
+      }
+
+      console.log(response.data);
+      console.log(response.data.items);
+
+      setSearchResults(response.data.items);
     } catch (error) {
       console.log("Hittade inga bilder", error);
     }
@@ -40,6 +44,20 @@ export const SearchForm = () => {
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
+  };
+
+  useEffect(() => {
+    if (searchClicked) {
+      handleSearch();
+      setSearchClicked(false);
+    }
+  }, [searchClicked]);
+
+  const handleSpelling = () => {
+    if (spelling) {
+      setInputValue(spelling);
+      setSearchClicked(true);
+    }
   };
 
   return (
@@ -54,6 +72,23 @@ export const SearchForm = () => {
         <button type="submit" onClick={handleSearch}>
           Sök
         </button>
+        {time > 0 && <p>Sökningen tog {time} sekunder</p>}
+        {spelling && (
+          <p>
+            Menade du:{" "}
+            <span
+              style={{
+                cursor: "pointer",
+                textDecoration: "underline",
+                color: "blue",
+              }}
+              onClick={handleSpelling}
+            >
+              {spelling}
+            </span>
+            ?
+          </p>
+        )}
       </form>
       <SearchResults results={searchResults} />
     </>
