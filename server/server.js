@@ -44,4 +44,25 @@ app.post("/users", async (req, res) => {
   }
 });
 
+app.get("/users/:userId/favorites", async (req, res) => {
+
+  try {
+    const { userId } = req.params;
+
+    const data = await readFile("users.json", "utf8");
+    const users = JSON.parse(data);
+    const existingUser = users.find((user) => user.userId === userId);
+
+    if (!existingUser) {
+      return res.status(404).send("hittade ej användare");
+    }
+    res.json(existingUser.favorites);
+
+    
+  } catch (error) {
+    console.log("kunde ej hitta favoritbilder", error);
+    res.status(500).send("hittade ej favoritbilder 2");
+  }
+});
+
 app.listen(3000, () => console.log("Server is upp...".rainbow.bold.italic));
