@@ -2,23 +2,24 @@ import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+
 export const FavoriteImages = () => {
   const { user } = useAuth0();
-  //ett get anrop från servern
-  //en map på bilderna
 
-  // en get i server sidan på userId
-
-  const [favoriteImages, setFavoriteImages] = useState([]);
+  const [favoriteImages, setFavoriteImages] = useState<
+    string[]
+  >([]);
 
   useEffect(() => {
-    //om det inte finns en användare så ska den ej göra något, if sats, med en return så den hoppar ur
+    if (!user || !user?.email) return;
 
     const fetchFavoriteImages = async () => {
       try {
         const response = await axios.get(
-          `http:localhost:3000/users/${user?.email}/favorites`
+          `http://localhost:3000/users/${user?.email}/favorites`
         );
+        console.log(response.data);
+
         setFavoriteImages(response.data);
       } catch (error) {
         console.log("kunde ej hämta favvobilderna", error);
@@ -28,5 +29,19 @@ export const FavoriteImages = () => {
     fetchFavoriteImages();
   }, [user?.email]);
 
-  return <></>;
+  return (
+    <>
+      <h1>Alla dina favvobilder</h1>
+
+      {favoriteImages.length === 0 ? (
+        <p>Finns inga favvobilder</p>
+      ) : (
+        favoriteImages.map((image, index) => (
+          <div key={index}>
+            <img src={image} alt={image} />
+          </div>
+        ))
+      )}
+    </>
+  );
 };

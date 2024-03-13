@@ -2,15 +2,15 @@
 
 ###
 
-POST http://localhost:3000/users
-Content-Type: application/json
+# POST http://localhost:3000/users
+# Content-Type: application/json
 
-{
-    "user": "fakeuser",
-    "favoriteImage": "fakeurl"
-}
+# {
+#     "user": "fakeuser",
+#     "favoriteImage": "fakeurl"
+# }
 
 
 ###
 
-# GET http://localhost:3000/users/sannasiljeback@gmail.com/favorites
+GET http://localhost:3000/users/sannasiljeback@gmail.com/favorites
