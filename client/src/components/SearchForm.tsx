@@ -15,7 +15,6 @@ export const SearchForm = () => {
   };
 
   const handleSearch = async () => {
-    //anropet till url
     const url = `https://www.googleapis.com/customsearch/v1?key=${
       import.meta.env.VITE_API_KEY
     }&cx=${
