@@ -11,9 +11,7 @@ export const SearchResults: React.FC<{ results: ISearchResults[] }> = ({
   const [favoriteImage, setFavoriteImage] = useState("");
 
   const saveUserImages = async (
-    title: string,
-    byteSize: number,
-    image: string
+    imageUrl: string
   ) => {
     try {
       const response = await axios.post(
@@ -21,13 +19,7 @@ export const SearchResults: React.FC<{ results: ISearchResults[] }> = ({
 
         {
           userId: user?.email,
-          favoriteImage: [
-            {
-              title: title,
-              byteSize: byteSize,
-              imageURL: image,
-            },
-          ],
+          favoriteImage: imageUrl
         },
         {
           headers: {
@@ -42,9 +34,9 @@ export const SearchResults: React.FC<{ results: ISearchResults[] }> = ({
     }
   };
 
-  const handleImages = (title: string, byteSize: number, imageURL: string) => {
-    setFavoriteImage(imageURL);
-    saveUserImages(title, byteSize, imageURL);
+  const handleImages = (imageUrl: string) => {
+    setFavoriteImage(imageUrl);
+    saveUserImages(imageUrl);
   };
 
   return (
@@ -55,7 +47,7 @@ export const SearchResults: React.FC<{ results: ISearchResults[] }> = ({
           <img src={result.link} alt={result.title} />
           <button
             onClick={() =>
-              handleImages(result.title, result.image.byteSize, result.link)
+              handleImages(result.link)
             }
           >
             Favvo knappen

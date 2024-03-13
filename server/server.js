@@ -12,13 +12,28 @@ app.use(cors());
 
 app.post("/users", async (req, res) => {
   try {
+    const { userId, favoriteImage } = req.body;
     console.log("user data", req.body);
+    // validering med joi
 
     const data = await readFile("users.json", "utf8");
 
-    const users = JSON.parse(data);
+    let users = JSON.parse(data);
 
-    users.push(req.body);
+    let existingUser = users.findIndex((user) => user.userId === userId);
+
+    console.log("existingUser:", existingUser);
+
+    if (existingUser !== -1) {
+      console.log("lägger bara till en till bild");
+      users[existingUser].favorites.push(favoriteImage);
+    } else {
+      console.log("lägger till ny användare med bilder");
+      users.push({
+        userId,
+        favorites: [favoriteImage],
+      });
+    }
 
     await writeFile("users.json", JSON.stringify(users));
 
