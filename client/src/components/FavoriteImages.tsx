@@ -2,13 +2,10 @@ import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-
 export const FavoriteImages = () => {
   const { user } = useAuth0();
 
-  const [favoriteImages, setFavoriteImages] = useState<
-    string[]
-  >([]);
+  const [favoriteImages, setFavoriteImages] = useState<string[]>([]);
 
   useEffect(() => {
     if (!user || !user?.email) return;
