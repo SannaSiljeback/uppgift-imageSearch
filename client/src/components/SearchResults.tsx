@@ -7,7 +7,6 @@ export const SearchResults: React.FC<{ results: ISearchResults[] }> = ({
   results,
 }) => {
   const { user } = useAuth0();
-  // console.log(user);
   const [favoriteImage, setFavoriteImage] = useState("");
 
   const saveUserImages = async (

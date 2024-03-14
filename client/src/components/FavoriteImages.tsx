@@ -2,6 +2,9 @@ import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+//gilla knapp som ett hjärta
+//en delete knapp
+
 export const FavoriteImages = () => {
   const { user } = useAuth0();
 
