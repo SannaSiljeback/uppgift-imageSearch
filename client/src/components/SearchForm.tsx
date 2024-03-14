@@ -23,6 +23,7 @@ export const SearchForm = () => {
 
     try {
       const response = await axios.get(url);
+      
 
       setTime(response.data.searchInformation.searchTime);
 
