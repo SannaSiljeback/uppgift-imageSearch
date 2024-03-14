@@ -4,7 +4,9 @@ const { readFile, writeFile } = require("fs").promises;
 
 const colors = require("colors");
 
-const registerSchema = require("./schemas/user.schema");
+const { registerSchema } = require("./schemas/user.schema");
+const { validate } = require("./validate");
+
 
 const app = express();
 
@@ -12,9 +14,13 @@ app.use(express.json());
 
 app.use(cors());
 
-app.post("/users", async (req, res) => {
+app.post("/users", validate(registerSchema), async (req, res) => {
   try {
     const { error } = registerSchema.validate(req.body, {abortEarly: false});
+
+    if (error) {
+      return res.status(400).json(error);
+    };
 
     const { userId, favoriteImage } = req.body;
     console.log("user data", req.body);

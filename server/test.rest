@@ -1,16 +1,18 @@
-# GET https://www.googleapis.com/customsearch/v1?key=AIzaSyBS5xFFlEo-G0ePm-dJHVkFO0ujg5rtqs8&cx=c46ed229b811d424c&num=10&q=flower
+GET https://www.googleapis.com/customsearch/v1?key=AIzaSyBS5xFFlEo-G0ePm-dJHVkFO0ujg5rtqs8&cx=c46ed229b811d424c&num=10&q=flower
 
 ###
 
-# POST http://localhost:3000/users
-# Content-Type: application/json
+POST http://localhost:3000/users
+Content-Type: application/json
 
-# {
-#     "user": "fakeuser",
-#     "favoriteImage": "fakeurl"
-# }
+{
+    "userId": "sanna",
+    "favoriteImage": "fakeurl"
+}
 
 
 ###
 
 GET http://localhost:3000/users/sannasiljeback@gmail.com/favorites
+
+###
