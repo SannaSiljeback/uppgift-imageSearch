@@ -1,5 +1,14 @@
 # Search Safari! 
+An fullstack image search app that uses Google Custom Search and Auth0
 
+## Packages used
+* React
+* Vite
+* Express
+* Node
+* Axios
+* Typescript
+* Tailwind
 
 ## Key Features
 * 
