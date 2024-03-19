@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { ISearchResults } from "../models/ISearchResults";
 import { SearchResults } from "./SearchResults";
+import "../styles/SearchForm.css";
 
 export const SearchForm = () => {
   const [inputValue, setInputValue] = useState("");
