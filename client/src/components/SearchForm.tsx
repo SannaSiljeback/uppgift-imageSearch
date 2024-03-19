@@ -38,7 +38,7 @@ export const SearchForm = () => {
 
       setSearchResults(response.data.items);
     } catch (error) {
-      console.log("Hittade inga bilder", error);
+      console.log("Could not find any images", error);
     }
   };
 
@@ -65,7 +65,7 @@ export const SearchForm = () => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Sök efter bilder!"
+          placeholder="Start you're image safari!"
           value={inputValue}
           onChange={handleInput}
         />

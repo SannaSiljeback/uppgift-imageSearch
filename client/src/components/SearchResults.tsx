@@ -27,9 +27,9 @@ export const SearchResults: React.FC<{ results: ISearchResults[] }> = ({
         }
       );
 
-      console.log("användaren är sparad", response.data);
+      console.log("User is saved!", response.data);
     } catch (error) {
-      console.log("användaren sparades inte", error);
+      console.log("Could not save user", error);
     }
   };
 

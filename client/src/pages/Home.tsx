@@ -12,7 +12,7 @@ export const Home = () => {
           <SearchForm />
         </>
       ) : (
-        <h3>You have to log in to be able to search for pictures</h3>
+        <h3>You have to log in to be able to search for pictures.</h3>
       )}     
 
       
