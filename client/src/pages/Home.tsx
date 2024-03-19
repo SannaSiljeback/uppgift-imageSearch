@@ -5,14 +5,14 @@ export const Home = () => {
   const { isAuthenticated } = useAuth0();
   return (
     <>
-      <h2>Här är image search</h2>
+      <h2>Photo Safari</h2>
 
       {isAuthenticated ? (
         <>
           <SearchForm />
         </>
       ) : (
-        <h2>du måste vara inloggad</h2>
+        <h3>You have to log in to be able to search for pictures</h3>
       )}     
 
       

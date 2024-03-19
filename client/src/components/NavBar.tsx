@@ -10,10 +10,10 @@ export const NavBar = () => {
       <nav>
         <ul>
           <li>
-            <NavLink to="/">Hem</NavLink>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/favorites">Favoriter</NavLink>
+            <NavLink to="/favorites">Favorites</NavLink>
           </li>
           <li>
             {isAuthenticated ? (

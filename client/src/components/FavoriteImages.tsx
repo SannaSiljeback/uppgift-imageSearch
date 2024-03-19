@@ -31,10 +31,10 @@ export const FavoriteImages = () => {
 
   return (
     <>
-      <h1>Alla dina favvobilder</h1>
+      <h1>All you're favorite pictures</h1>
 
       {favoriteImages.length === 0 ? (
-        <p>Finns inga favvobilder</p>
+        <p>You don't have any favorite pictures yet...</p>
       ) : (
         favoriteImages.map((image, index) => (
           <div key={index}>
