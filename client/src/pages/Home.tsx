@@ -8,7 +8,7 @@ export const Home = () => {
   const { isAuthenticated } = useAuth0();
   return (
     <>
-    <div className="container">
+    <div className="homeContainer">
       <img src={safariImg} alt="A picture of colorful safari animals." className="safariImage" />
 
       {/* <h2>Photo Safari</h2> */}

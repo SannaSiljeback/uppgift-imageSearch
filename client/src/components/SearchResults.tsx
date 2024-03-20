@@ -36,13 +36,6 @@ export const SearchResults: React.FC<{ results: ISearchResults[] }> = ({
   const handleImages = (imageUrl: string) => {
     setFavoriteImage(imageUrl);
 
-    // if (favoriteImage.includes(imageUrl)) {
-
-    //   setFavoriteImage(favoriteImage.filter(img => img !== imageUrl));
-    // } else {
-
-    //   setFavoriteImage([...favoriteImage, imageUrl]);
-    // }
 
     saveUserImages(imageUrl);
   };

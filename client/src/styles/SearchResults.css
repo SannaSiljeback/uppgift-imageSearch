@@ -11,25 +11,35 @@
 }
 
 .img {
-  /* height: 200px; */
   height: 200px;
-  width: 200px;
+  width: 220px;
 }
 
 .btn {
-  height: 40px;
-  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 25px;
+  width: 25px;
   background-color: #429e9b;
-  border-radius: 15px;
+  border-radius: 7px;
 
   position: absolute;
   top: 5px;
   right: 5px;
   padding: 5px;
+
+  outline: none !important;
 }
 
 .btn.favorite {
   color: red;
+}
+
+.btn.active {
+    box-shadow: 0 0 5px #183a39;
+    
 }
 
 /* .heart-icon {

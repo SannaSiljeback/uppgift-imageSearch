@@ -67,7 +67,7 @@ export const SearchForm = () => {
         <div className="formContainer">
         <input
           type="text"
-          placeholder="Start you're image safari!"
+          placeholder="Start your image safari!"
           value={inputValue}
           onChange={handleInput}
           className="searchInput"
@@ -76,7 +76,7 @@ export const SearchForm = () => {
           Sök
         </button>
         </div>
-        {time > 0 && <p className="time">You're search took {time} seconds</p>}
+        {time > 0 && <p className="time">Your search took {time} seconds</p>}
         {spelling && (
           <p className="spelling">
             Did you mean:{" "}
