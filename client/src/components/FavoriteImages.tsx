@@ -3,8 +3,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "../styles/FavoriteImages.css";
 
-//en delete knapp
-
 export const FavoriteImages = () => {
   const { user } = useAuth0();
 
@@ -29,24 +27,33 @@ export const FavoriteImages = () => {
     fetchFavoriteImages();
   }, [user?.email]);
 
+  const handleDelete = async (imageUrl: string) => {
+    try {
+      await axios.delete(`http://localhost:3000/users/${user?.email}/favorites/${imageUrl}`
+      );
+      setFavoriteImages(favoriteImages.filter((image) => image !== imageUrl));
+    } catch (error) {
+      console.log("Could not delete image", error);
+      
+    }
+  };
+
   return (
     <>
-    <h1>All your favorite images!</h1>
+      <h1>All your favorite images!</h1>
 
-    {favoriteImages.length === 0 && (
-      <h3 className="text">You don't have any favorite images yet...</h3>
-    
-    )}
+      {favoriteImages.length === 0 && (
+        <h3 className="text">You don't have any favorite images yet...</h3>
+      )}
 
-    <div className="favoriteContainer">
-
-      
+      <div className="favoriteContainer">
         {favoriteImages.map((image, index) => (
           <div key={index} className="favoriteItems">
-            <img src={image} alt={image} className="favoriteImg"/>
+            <img src={image} alt={image} className="favoriteImg" />
+            <button
+            onClick={() => handleDelete(image)}>Ta bort</button>
           </div>
         ))}
-    
       </div>
     </>
   );

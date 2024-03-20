@@ -45,7 +45,7 @@ app.post("/users", validate(registerSchema), async (req, res) => {
 
     res.status(201).send("User is saved!");
   } catch (error) {
-    // console.log("Error when trying to save an user", error);
+    console.log("Error when trying to save an user", error);
     res.status(500).send("Error when trying to save an user");
   }
 });
@@ -63,8 +63,40 @@ app.get("/users/:userId/favorites", async (req, res) => {
     }
     res.json(existingUser.favorites);
   } catch (error) {
-    // console.log("Could not find any favorite images", error);
+    console.log("Could not find any favorite images", error);
     res.status(500).send("Could not find any favorite images");
+  }
+});
+
+app.delete("/users/:userId/favorites/:favoriteImage", async (req, res) => {
+  try {
+    const { userId, favoriteImage } = req.params;
+
+    const data = await readFile("users.json", "utf8");
+    let users = JSON.parse(data);
+
+    const user = users.find((user) => user.userId === userId);
+
+    if (!user) {
+      return res.status(404).send("Could not find a user with that id");
+    }
+    const favoriteIndex = user.favorites.findIndex((image) => image === favoriteImage);
+
+
+
+
+    if (favoriteIndex === -1) {
+      return res.status(404).send("Could not find a favorite image");
+    }
+
+    user.favorites.splice(favoriteIndex, 1);
+
+    await writeFile("users.json", JSON.stringify(users));
+
+    res.status(204).send("Favorite image deleted!");
+  } catch (error) {
+    console.log("Could not delete the favorite image", error);
+    res.status(500).send("Could not delete the favorite image");
   }
 });
 
