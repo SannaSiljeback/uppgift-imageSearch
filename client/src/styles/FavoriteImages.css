@@ -2,17 +2,15 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
   
-    /* margin-top: 50px; */
-    /* margin-left: 40px; */
     margin: 50px 40px;
     gap: 20px;
 
     justify-content: space-around;
 
-    /* justify-content: center; */
+    
 
   }
-  
+
   
   /* denna behövs om man gör en delete knapp */
   /* .favoriteItems {
