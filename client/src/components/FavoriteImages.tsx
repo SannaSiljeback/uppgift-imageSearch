@@ -22,7 +22,7 @@ export const FavoriteImages = () => {
 
         setFavoriteImages(response.data);
       } catch (error) {
-        console.log("kunde ej hämta favvobilderna", error);
+        console.log("Could not fetch favorite images", error);
       }
     };
 

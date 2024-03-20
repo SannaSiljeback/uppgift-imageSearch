@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Ojuju:wght@200..800&display=swap");
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.searchInput {
+  border-radius: 20px;
+  height: 40px;
+  width: 400px;
+  font-family: ojuju, sans-serif;
+
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+.searchBtn {
+  width: 70px;
+  height: 46px;
+  background-color: #429e9b;
+  margin-left: 15px;
+  border-radius: 25px;
+  padding-top: 1px;
+
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+.time {
+  display: flex;
+  justify-content: center;
+}
+
+.spelling {
+    display: flex;
+    justify-content: center;
+}
