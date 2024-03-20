@@ -23,7 +23,7 @@ a {
   text-decoration: inherit;
 }
 a:hover {
-  color: #28657B;
+  color: #429e9b;
 }
 
 body {
@@ -49,7 +49,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #28657B;
+  border-color: #183A39;
 }
 button:focus,
 button:focus-visible {
@@ -62,7 +62,7 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #28657B;
+    color: #429e9b;
   }
   button {
     background-color: #f9f9f9;

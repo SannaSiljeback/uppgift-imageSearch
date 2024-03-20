@@ -64,24 +64,27 @@ export const SearchForm = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
+        <div className="formContainer">
         <input
           type="text"
           placeholder="Start you're image safari!"
           value={inputValue}
           onChange={handleInput}
+          className="searchInput"
         />
-        <button type="submit" onClick={handleSearch}>
+        <button type="submit" onClick={handleSearch} className="searchBtn">
           Sök
         </button>
-        {time > 0 && <p>Sökningen tog {time} sekunder</p>}
+        </div>
+        {time > 0 && <p className="time">You're search took {time} seconds</p>}
         {spelling && (
-          <p>
-            Menade du:{" "}
+          <p className="spelling">
+            Did you mean:{" "}
             <span
               style={{
                 cursor: "pointer",
                 textDecoration: "underline",
-                color: "blue",
+                color: "#183A39",
               }}
               onClick={handleSpelling}
             >
