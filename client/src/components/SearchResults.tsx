@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ISearchResults } from "../models/ISearchResults";
 import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -10,6 +10,24 @@ export const SearchResults: React.FC<{ results: ISearchResults[] }> = ({
 }) => {
   const { user } = useAuth0();
   const [favoriteImage, setFavoriteImage] = useState<string[]>([]);
+
+  const [shuffledResults, setShuffledResults] = useState<ISearchResults[]>([]);
+
+  const shuffleResults = (array: ISearchResults[]) => {
+    const shuffledArray = [...array];
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledArray[i], shuffledArray[j]] = [
+        shuffledArray[j],
+        shuffledArray[i],
+      ];
+    }
+    return shuffledArray;
+  };
+
+  useEffect(() => {
+    setShuffledResults(shuffleResults(results));
+  }, [results]);
 
   const saveUserImages = async (imageUrl: string) => {
     try {
@@ -34,14 +52,11 @@ export const SearchResults: React.FC<{ results: ISearchResults[] }> = ({
   };
 
   const handleImages = (imageUrl: string) => {
-    // setFavoriteImage(imageUrl);
-
     if (favoriteImage.includes(imageUrl)) {
       setFavoriteImage(favoriteImage.filter((image) => image !== imageUrl));
     } else {
       setFavoriteImage([...favoriteImage, imageUrl]);
     }
-
 
     saveUserImages(imageUrl);
   };
@@ -49,7 +64,7 @@ export const SearchResults: React.FC<{ results: ISearchResults[] }> = ({
   return (
     <>
       <div className="resultsContainer">
-        {results.map((result, index) => (
+        {shuffledResults.map((result, index) => (
           <div key={index} className="resultsItems">
             <img src={result.link} alt={result.title} className="resultsImg" />
             <button
