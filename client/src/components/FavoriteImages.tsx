@@ -31,17 +31,20 @@ export const FavoriteImages = () => {
 
   return (
     <>
-      <h1>All your favorite pictures</h1>
+    <h1>All your favorite images!</h1>
+    <div className="favoriteContainer">
+      
 
       {favoriteImages.length === 0 ? (
-        <p>You don't have any favorite pictures yet...</p>
+        <h3 className="text">You don't have any favorite pictures yet...</h3>
       ) : (
         favoriteImages.map((image, index) => (
-          <div key={index}>
-            <img src={image} alt={image} />
+          <div key={index} className="favoriteItems">
+            <img src={image} alt={image} className="favoriteImg"/>
           </div>
         ))
       )}
+      </div>
     </>
   );
 };

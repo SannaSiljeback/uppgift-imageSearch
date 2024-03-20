@@ -12,6 +12,8 @@
   height: 40px;
   width: 400px;
   font-family: ojuju, sans-serif;
+  font-size: 1em;
+  padding-left: 10px;
 
   /* display: flex;
   align-items: center;

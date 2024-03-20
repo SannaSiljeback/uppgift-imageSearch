@@ -9,7 +9,7 @@ export const SearchResults: React.FC<{ results: ISearchResults[] }> = ({
   results,
 }) => {
   const { user } = useAuth0();
-  const [favoriteImage, setFavoriteImage] = useState("");
+  const [favoriteImage, setFavoriteImage] = useState<string[]>([]);
 
   const saveUserImages = async (imageUrl: string) => {
     try {
@@ -34,7 +34,13 @@ export const SearchResults: React.FC<{ results: ISearchResults[] }> = ({
   };
 
   const handleImages = (imageUrl: string) => {
-    setFavoriteImage(imageUrl);
+    // setFavoriteImage(imageUrl);
+
+    if (favoriteImage.includes(imageUrl)) {
+      setFavoriteImage(favoriteImage.filter((image) => image !== imageUrl));
+    } else {
+      setFavoriteImage([...favoriteImage, imageUrl]);
+    }
 
 
     saveUserImages(imageUrl);
@@ -45,11 +51,11 @@ export const SearchResults: React.FC<{ results: ISearchResults[] }> = ({
       <div className="resultsContainer">
         {results.map((result, index) => (
           <div key={index} className="resultsItems">
-            <img src={result.link} alt={result.title} className="img" />
+            <img src={result.link} alt={result.title} className="resultsImg" />
             <button
               onClick={() => handleImages(result.link)}
-              className={`btn ${
-                favoriteImage === result.link ? "favorite" : ""
+              className={`resultsBtn ${
+                favoriteImage.includes(result.link) ? "favorite" : ""
               }`}
             >
               <FaHeart />

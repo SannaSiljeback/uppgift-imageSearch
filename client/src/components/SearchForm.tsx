@@ -24,7 +24,6 @@ export const SearchForm = () => {
 
     try {
       const response = await axios.get(url);
-      
 
       setTime(response.data.searchInformation.searchTime);
 
@@ -65,26 +64,26 @@ export const SearchForm = () => {
     <>
       <form onSubmit={handleSubmit}>
         <div className="formContainer">
-        <input
-          type="text"
-          placeholder="Start your image safari!"
-          value={inputValue}
-          onChange={handleInput}
-          className="searchInput"
-        />
-        <button type="submit" onClick={handleSearch} className="searchBtn">
-          Sök
-        </button>
+          <input
+            type="text"
+            placeholder="Start your image safari!"
+            value={inputValue}
+            onChange={handleInput}
+            className="searchInput"
+          />
+          <button type="submit" onClick={handleSearch} className="searchBtn">
+            Sök
+          </button>
         </div>
         {time > 0 && <p className="time">Your search took {time} seconds</p>}
         {spelling && (
           <p className="spelling">
-            Did you mean:{" "}
+            Did you mean:&nbsp;{" "}
             <span
               style={{
                 cursor: "pointer",
                 textDecoration: "underline",
-                color: "#183A39",
+                color: "#429E9B",
               }}
               onClick={handleSpelling}
             >
