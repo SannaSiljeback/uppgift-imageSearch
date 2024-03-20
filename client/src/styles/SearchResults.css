@@ -1,0 +1,30 @@
+.resultsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+
+    margin-top: 20px;
+    gap: 20px;
+
+}
+
+.resultsItems {
+    position: relative;
+}
+
+.img {
+    /* height: 200px; */
+    height: auto;
+    width: 200px;
+}
+
+.btn {
+    height: 40px;
+    width: 40px;
+    background-color: #429e9b;
+    border-radius: 15px;
+
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px;
+}

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ISearchResults } from "../models/ISearchResults";
 import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
+import "../styles/SearchResults.css";
 
 export const SearchResults: React.FC<{ results: ISearchResults[] }> = ({
   results,
@@ -40,19 +41,21 @@ export const SearchResults: React.FC<{ results: ISearchResults[] }> = ({
 
   return (
     <>
+    <div className="resultsContainer">
       {results.map((result, index) => (
-        <div key={index}>
-          <h2>{result.title}</h2>
-          <img src={result.link} alt={result.title} />
+        <div key={index} className="resultsItems">
+          <img src={result.link} alt={result.title} className="img" />
           <button
             onClick={() =>
               handleImages(result.link)
             }
+            className="btn"
           >
             Favvo knappen
           </button>
         </div>
       ))}
+      </div>
     </>
   );
 };
