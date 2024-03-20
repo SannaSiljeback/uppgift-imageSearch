@@ -3,6 +3,7 @@ import { ISearchResults } from "../models/ISearchResults";
 import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
 import "../styles/SearchResults.css";
+import { FaHeart } from "react-icons/fa";
 
 export const SearchResults: React.FC<{ results: ISearchResults[] }> = ({
   results,
@@ -10,16 +11,14 @@ export const SearchResults: React.FC<{ results: ISearchResults[] }> = ({
   const { user } = useAuth0();
   const [favoriteImage, setFavoriteImage] = useState("");
 
-  const saveUserImages = async (
-    imageUrl: string
-  ) => {
+  const saveUserImages = async (imageUrl: string) => {
     try {
       const response = await axios.post(
         "http://localhost:3000/users",
 
         {
           userId: user?.email,
-          favoriteImage: imageUrl
+          favoriteImage: imageUrl,
         },
         {
           headers: {
@@ -36,25 +35,34 @@ export const SearchResults: React.FC<{ results: ISearchResults[] }> = ({
 
   const handleImages = (imageUrl: string) => {
     setFavoriteImage(imageUrl);
+
+    // if (favoriteImage.includes(imageUrl)) {
+
+    //   setFavoriteImage(favoriteImage.filter(img => img !== imageUrl));
+    // } else {
+
+    //   setFavoriteImage([...favoriteImage, imageUrl]);
+    // }
+
     saveUserImages(imageUrl);
   };
 
   return (
     <>
-    <div className="resultsContainer">
-      {results.map((result, index) => (
-        <div key={index} className="resultsItems">
-          <img src={result.link} alt={result.title} className="img" />
-          <button
-            onClick={() =>
-              handleImages(result.link)
-            }
-            className="btn"
-          >
-            Favvo knappen
-          </button>
-        </div>
-      ))}
+      <div className="resultsContainer">
+        {results.map((result, index) => (
+          <div key={index} className="resultsItems">
+            <img src={result.link} alt={result.title} className="img" />
+            <button
+              onClick={() => handleImages(result.link)}
+              className={`btn ${
+                favoriteImage === result.link ? "favorite" : ""
+              }`}
+            >
+              <FaHeart />
+            </button>
+          </div>
+        ))}
       </div>
     </>
   );

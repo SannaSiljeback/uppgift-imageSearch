@@ -1,30 +1,49 @@
 .resultsContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
 
-    margin-top: 20px;
-    gap: 20px;
-
+  margin-top: 20px;
+  gap: 20px;
 }
 
 .resultsItems {
-    position: relative;
+  position: relative;
 }
 
 .img {
-    /* height: 200px; */
-    height: auto;
-    width: 200px;
+  /* height: 200px; */
+  height: 200px;
+  width: 200px;
 }
 
 .btn {
-    height: 40px;
-    width: 40px;
-    background-color: #429e9b;
-    border-radius: 15px;
+  height: 40px;
+  width: 40px;
+  background-color: #429e9b;
+  border-radius: 15px;
 
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    padding: 5px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 5px;
 }
+
+.btn.favorite {
+  color: red;
+}
+
+/* .heart-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: rgb(224, 224, 224);
+   
+  }
+   
+  .heart-icon:hover {
+    color: red;
+  }
+   
+  .heart-icon.clicked {
+    color: red;
+  } */
