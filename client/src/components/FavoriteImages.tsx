@@ -2,6 +2,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "../styles/FavoriteImages.css";
+import { BsFillTrash3Fill } from "react-icons/bs";
 
 export const FavoriteImages = () => {
   const { user } = useAuth0();
@@ -30,12 +31,12 @@ export const FavoriteImages = () => {
   const handleDelete = async (imageUrl: string) => {
     const encodedImageUrl = encodeURIComponent(imageUrl);
     try {
-      await axios.delete(`http://localhost:3000/users/${user?.email}/favorites/${encodedImageUrl}`
+      await axios.delete(
+        `http://localhost:3000/users/${user?.email}/favorites/${encodedImageUrl}`
       );
       setFavoriteImages(favoriteImages.filter((image) => image !== imageUrl));
     } catch (error) {
       console.log("Could not delete image", error);
-      
     }
   };
 
@@ -51,8 +52,9 @@ export const FavoriteImages = () => {
         {favoriteImages.map((image, index) => (
           <div key={index} className="favoriteItems">
             <img src={image} alt={image} className="favoriteImg" />
-            <button
-            onClick={() => handleDelete(image)}>Ta bort</button>
+            <button onClick={() => handleDelete(image)} className="deleteBtn">
+              <BsFillTrash3Fill />
+            </button>
           </div>
         ))}
       </div>

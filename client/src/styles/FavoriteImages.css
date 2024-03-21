@@ -1,35 +1,55 @@
 .favoriteContainer {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-  
-    margin: 50px 40px;
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
 
-    justify-content: space-around;
+  margin: 50px 40px;
+  gap: 20px;
 
-    
+  justify-content: space-around;
+}
 
-  }
+.favoriteItems {
+  position: relative;
+}
 
-  
-  /* denna behövs om man gör en delete knapp */
-  /* .favoriteItems {
-    position: relative;
-  } */
+.favoriteImg {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 
-  
-  .favoriteImg {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
+h1 {
+  display: flex;
+  justify-content: center;
+}
 
-  h1 {
-    display: flex;
-    justify-content: center;
-  }
+.text {
+  display: grid;
+  justify-content: center;
+}
 
-  .text {
-    display: grid;
-    justify-content: center;
-  }
+.deleteBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 25px;
+  width: 25px;
+  background-color: #429e9b;
+  border-radius: 7px;
+
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 5px;
+
+  outline: none !important;
+}
+
+.deleteBtn.favorite {
+  color: red;
+}
+
+.deleteBtn.active {
+  box-shadow: 0 0 5px #183a39;
+}
