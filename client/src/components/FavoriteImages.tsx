@@ -28,8 +28,9 @@ export const FavoriteImages = () => {
   }, [user?.email]);
 
   const handleDelete = async (imageUrl: string) => {
+    const encodedImageUrl = encodeURIComponent(imageUrl);
     try {
-      await axios.delete(`http://localhost:3000/users/${user?.email}/favorites/${imageUrl}`
+      await axios.delete(`http://localhost:3000/users/${user?.email}/favorites/${encodedImageUrl}`
       );
       setFavoriteImages(favoriteImages.filter((image) => image !== imageUrl));
     } catch (error) {

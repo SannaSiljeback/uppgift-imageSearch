@@ -75,21 +75,18 @@ app.delete("/users/:userId/favorites/:favoriteImage", async (req, res) => {
     const data = await readFile("users.json", "utf8");
     let users = JSON.parse(data);
 
-    const user = users.find((user) => user.userId === userId);
+    const userIndex = users.findIndex((user) => user.userId === userId);
 
-    if (!user) {
+    if (userIndex === -1) {
       return res.status(404).send("Could not find a user with that id");
     }
-    const favoriteIndex = user.favorites.findIndex((image) => image === favoriteImage);
 
+    const user = users[userIndex];
+    const favoriteFiltered = user.favorites.filter(
+      (favorite) => favorite !== favoriteImage
+    );
 
-
-
-    if (favoriteIndex === -1) {
-      return res.status(404).send("Could not find a favorite image");
-    }
-
-    user.favorites.splice(favoriteIndex, 1);
+    user.favorites = favoriteFiltered;
 
     await writeFile("users.json", JSON.stringify(users));
 
