@@ -77,6 +77,8 @@ p {
 @media screen and (max-width: 768px) {
   .resultsContainer {
     grid-template-columns: repeat(2, 1fr);
+    height: 85%;
+    width: 85%;
   }
 
   .favoriteBtn {
@@ -88,6 +90,8 @@ p {
 @media screen and (max-width: 576px) {
   .resultsContainer {
     grid-template-columns: repeat(1, 1fr);
+    height: 60%;
+    width: 60%;
   }
 
   .favoriteBtn {
