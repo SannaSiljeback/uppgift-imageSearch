@@ -1,5 +1,7 @@
+![Skärmbild 2024-03-22 131034](https://github.com/SannaSiljeback/uppgift-imageSearch/assets/144778923/1378324e-4607-4b14-98d0-238df98be265)
+
 # Search Safari! 
-An fullstack image search app that uses Google Custom Search and Auth0
+A fullstack image search app that uses Google Custom Search and Auth0 for user authentication.
 
 ## Packages used
 * React
@@ -11,18 +13,18 @@ An fullstack image search app that uses Google Custom Search and Auth0
 * Joi
 
 ## Key Features
-* User authentication with both Google and Github, using Auth0.
-* Image search that also comes with suggestions if you mispell.
-* Display search results and also shows the search time duration.
-* Ability to save favorite images and view them at you're favorite page.
+* User authentication with both Google and Github, facilitated by Auth0.
+* Image search functionality with automatic suggestions for misspelled queries.
+* Display of search results along with search duration.
+* Ability to save favorite images and view them on your own favorite page.
 
 ## Set up
-* Before you start you have to have node.js installed, a Google Custom Search JSON API Key and Auth0 application.
+* Before starting, ensure you have Node.js installed, as well as a Google Custom Search JSON API Key and an Auth0 application.
 
 * Clone repository from [Github](https://github.com/SannaSiljeback/uppgift-imageSearch/)
 * Navigate to the project directory.
 
-* First navigate to the client side in the project directory:
+* First, navigate to the client side within the project directory:
 1. Run:
 ```
 cd client
@@ -43,7 +45,7 @@ VITE_GOOGLE_ID={your_google_search_engine_id}
 npm run dev
 ```
 
-* Then navigate to the server side in the project directory:
+* Next, navigate to the server side within the project directory:
 1. Run:
 ```
 cd server
@@ -57,8 +59,9 @@ npm i
 node server
 ```
 
-* When you're finished, go to http://localhost:5173/ in your browser to use the app.
+* Once finished, access the app at http://localhost:5173/ in your browser.
 
 ## API Endpoints
 * POST /users
 * GET /users/{userId}/favorites
+* DELETE /users/:userId/favorites/:favoriteImage
