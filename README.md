@@ -63,4 +63,4 @@ node server
 ## API Endpoints
 * POST /users
 * GET /users/{userId}/favorites
-* DELETE /users/:userId/favorites/:favoriteImage
+* DELETE /users/{userId}/favorites/:favoriteImage
