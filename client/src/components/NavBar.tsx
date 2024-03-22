@@ -5,7 +5,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import "../styles/NavBar.css";
 
 export const NavBar = () => {
-   const { isAuthenticated } = useAuth0();
+  const { isAuthenticated } = useAuth0();
   return (
     <>
       <nav>

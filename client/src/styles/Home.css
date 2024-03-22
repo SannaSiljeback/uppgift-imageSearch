@@ -1,12 +1,62 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
+  margin-bottom: 30px;
 }
 
 .safariImage {
-    width: 25%
+  width: 35%;
+}
 
+h2 {
+  font-size: 2em;
+}
+
+@media screen and (max-width: 1400px) {
+  .safariImage {
+    width: 37%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .safariImage {
+    width: 40%;
+  }
+
+  h2 {
+    font-size: 1.8em;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .safariImage {
+    width: 42%;
+  }
+
+  h2 {
+    font-size: 1.6em;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .safariImage {
+    width: 45%;
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .safariImage {
+    width: 50%;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
 }

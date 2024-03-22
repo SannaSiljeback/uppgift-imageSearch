@@ -12,10 +12,12 @@
   height: 40px;
   width: 400px;
   font-family: ojuju, sans-serif;
+  font-size: 1em;
+  padding-left: 10px;
+}
 
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
+.searchInput:focus {
+  outline: none;
 }
 
 .searchBtn {
@@ -25,10 +27,6 @@
   margin-left: 15px;
   border-radius: 25px;
   padding-top: 1px;
-
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
 }
 
 .time {
@@ -37,6 +35,38 @@
 }
 
 .spelling {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .formContainer {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .searchInput {
+    height: 37px;
+  }
+
+  .searchBtn {
+    height: 43px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .formContainer {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .searchInput {
+    height: 35px;
+  }
+
+  .searchBtn {
+    height: 41px;
+  }
 }

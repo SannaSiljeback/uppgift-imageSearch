@@ -10,9 +10,9 @@ export const Favorites = () => {
           <FavoriteImages />
         </>
       ) : (
-        <h3>
-          You have to log in to be able to see you're favorite pictures...
-        </h3>
+        <h2 className="text">
+          You have to log in to be able to see your favorite images...
+        </h2>
       )}
     </>
   );
