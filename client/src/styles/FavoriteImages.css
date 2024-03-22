@@ -89,8 +89,8 @@ h1 {
 @media screen and (max-width: 768px) {
   .favoriteContainer {
     grid-template-columns: repeat(2, 1fr);
-    height: 85%;
-    width: 85%;
+    height: 80%;
+    width: 80%;
     margin: auto;
     margin-top: 50px;
   }
