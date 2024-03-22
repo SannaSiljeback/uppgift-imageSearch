@@ -9,7 +9,6 @@ A fullstack image search app that uses Google Custom Search and Auth0 for user a
 * Node Express
 * Axios
 * Typescript
-* Tailwind
 * Joi
 
 ## Key Features
