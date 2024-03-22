@@ -20,6 +20,12 @@ a {
   font-size: 1.1em;
 }
 
+@media screen and (max-width: 992px) {
+  ul {
+    margin-right: 25px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   ul {
     margin-right: 20px;
