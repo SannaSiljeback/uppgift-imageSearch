@@ -89,6 +89,10 @@ h1 {
 @media screen and (max-width: 768px) {
   .favoriteContainer {
     grid-template-columns: repeat(2, 1fr);
+    height: 85%;
+    width: 85%;
+    margin: auto;
+    margin-top: 50px;
   }
 
   .deleteBtn {
@@ -104,6 +108,10 @@ h1 {
 @media screen and (max-width: 576px) {
   .favoriteContainer {
     grid-template-columns: repeat(1, 1fr);
+    height: 60%;
+    width: 60%;
+    margin: auto; 
+    margin-top: 50px;
   }
 
   .deleteBtn {
