@@ -8,5 +8,40 @@
 }
 
 .safariImage {
-    width: 25%
+    width: 35%;
+}
+
+@media screen and (max-width: 1400px) {
+    .safariImage {
+        width: 37%;
+    }
+    
+}
+
+@media screen and (max-width: 1200px) {
+    .safariImage {
+        width: 40%;
+    }
+    
+}
+
+@media screen and (max-width: 992px) {
+    .safariImage {
+        width: 42%;
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    .safariImage {
+        width: 45%;
+    }
+    
+}
+
+@media screen and (max-width: 576px) {
+    .safariImage {
+        width: 50%;
+    }
+    
 }

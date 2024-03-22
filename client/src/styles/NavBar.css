@@ -1,17 +1,33 @@
 nav {
-    display: flex;
-    justify-content: end;
-    align-items: center;
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }
 
 ul {
-    list-style: none;
-    display: flex;
-    padding: 0;
-    margin-right: 30px;   
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin-right: 30px;
 }
 
-li {   
-    padding-right: 10px;
-    padding: 20px
+li {
+  padding: 20px;
+  padding-right: 0px;
+}
+
+a {
+  font-size: 1.1em;
+}
+
+@media screen and (max-width: 768px) {
+  ul {
+    margin-right: 20px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  ul {
+    margin-right: 15px;
+  }
 }

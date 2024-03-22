@@ -69,7 +69,7 @@ export const SearchResults: React.FC<{ results: ISearchResults[] }> = ({
             <img src={result.link} alt={result.title} className="resultsImg" />
             <button
               onClick={() => handleImages(result.link)}
-              className={`resultsBtn ${
+              className={`favoriteBtn ${
                 favoriteImage.includes(result.link) ? "favorite" : ""
               }`}
             >

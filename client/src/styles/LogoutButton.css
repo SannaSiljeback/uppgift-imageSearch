@@ -7,3 +7,10 @@
     align-items: center;
     justify-content: center;
 }
+
+/* @media screen and (max-width: 992px) {
+
+    .logoutBtn {
+        height: 35px;
+    }
+} */

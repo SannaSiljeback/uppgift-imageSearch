@@ -1,16 +1,12 @@
 const express = require("express");
 const cors = require("cors");
 const { readFile, writeFile } = require("fs").promises;
-
 const colors = require("colors");
-
 const { registerSchema } = require("./schemas/user.schema");
 const { validate } = require("./validate");
 
 const app = express();
-
 app.use(express.json());
-
 app.use(cors());
 
 app.post("/users", validate(registerSchema), async (req, res) => {
@@ -23,13 +19,9 @@ app.post("/users", validate(registerSchema), async (req, res) => {
 
     const { userId, favoriteImage } = req.body;
     console.log("user data", req.body);
-
     const data = await readFile("users.json", "utf8");
-
     let users = JSON.parse(data);
-
     let existingUser = users.findIndex((user) => user.userId === userId);
-
     console.log("existingUser:", existingUser);
 
     if (existingUser !== -1) {
@@ -42,7 +34,6 @@ app.post("/users", validate(registerSchema), async (req, res) => {
     }
 
     await writeFile("users.json", JSON.stringify(users));
-
     res.status(201).send("User is saved!");
   } catch (error) {
     console.log("Error when trying to save an user", error);
@@ -53,7 +44,6 @@ app.post("/users", validate(registerSchema), async (req, res) => {
 app.get("/users/:userId/favorites", async (req, res) => {
   try {
     const { userId } = req.params;
-
     const data = await readFile("users.json", "utf8");
     const users = JSON.parse(data);
     const existingUser = users.find((user) => user.userId === userId);
@@ -71,10 +61,8 @@ app.get("/users/:userId/favorites", async (req, res) => {
 app.delete("/users/:userId/favorites/:favoriteImage", async (req, res) => {
   try {
     const { userId, favoriteImage } = req.params;
-
     const data = await readFile("users.json", "utf8");
     let users = JSON.parse(data);
-
     const userIndex = users.findIndex((user) => user.userId === userId);
 
     if (userIndex === -1) {
@@ -85,11 +73,9 @@ app.delete("/users/:userId/favorites/:favoriteImage", async (req, res) => {
     const favoriteFiltered = user.favorites.filter(
       (favorite) => favorite !== favoriteImage
     );
-
     user.favorites = favoriteFiltered;
 
     await writeFile("users.json", JSON.stringify(users));
-
     res.status(204).send("Favorite image deleted!");
   } catch (error) {
     console.log("Could not delete the favorite image", error);
