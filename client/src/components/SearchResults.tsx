@@ -16,9 +16,9 @@ export const SearchResults: React.FC<{ results: ISearchResults[] }> = ({
   const shuffleResults = (array: ISearchResults[]) => {
     const shuffledArray = [...array];
     for (let i = shuffledArray.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffledArray[i], shuffledArray[j]] = [
-        shuffledArray[j],
+      const randomImages = Math.floor(Math.random() * (i + 1));
+      [shuffledArray[i], shuffledArray[randomImages]] = [
+        shuffledArray[randomImages],
         shuffledArray[i],
       ];
     }
@@ -45,9 +45,9 @@ export const SearchResults: React.FC<{ results: ISearchResults[] }> = ({
         }
       );
 
-      console.log("User is saved!", response.data);
+      console.log("User images are saved!", response.data);
     } catch (error) {
-      console.log("Could not save user", error);
+      console.log("Could not save user images", error);
     }
   };
 

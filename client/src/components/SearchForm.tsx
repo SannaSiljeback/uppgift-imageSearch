@@ -33,9 +33,6 @@ export const SearchForm = () => {
         setSpelling("");
       }
 
-      console.log(response.data);
-      console.log(response.data.items);
-
       setSearchResults(response.data.items);
     } catch (error) {
       console.log("Could not find any images", error);

@@ -11,7 +11,7 @@ export const Favorites = () => {
         </>
       ) : (
         <h2 className="text">
-          You have to log in to be able to see you're favorite images...
+          You have to log in to be able to see your favorite images...
         </h2>
       )}
     </>

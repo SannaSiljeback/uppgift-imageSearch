@@ -14,10 +14,6 @@
   font-family: ojuju, sans-serif;
   font-size: 1em;
   padding-left: 10px;
-
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
 }
 
 .searchBtn {
@@ -27,10 +23,6 @@
   margin-left: 15px;
   border-radius: 25px;
   padding-top: 1px;
-
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
 }
 
 .time {

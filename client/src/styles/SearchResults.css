@@ -25,13 +25,12 @@
   width: 25px;
   background-color: #429e9b;
   border-radius: 7px;
+  outline: none !important;
 
   position: absolute;
   top: 5px;
   right: 5px;
   padding: 5px;
-
-  outline: none !important;
 }
 
 .resultsBtn.favorite {

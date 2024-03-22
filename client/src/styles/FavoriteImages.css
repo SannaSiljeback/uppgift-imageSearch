@@ -1,11 +1,10 @@
 .favoriteContainer {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  justify-content: space-around;
 
   margin: 50px 40px;
   gap: 20px;
-
-  justify-content: space-around;
 }
 
 .favoriteItems {
@@ -37,13 +36,12 @@ h1 {
   width: 25px;
   background-color: #429e9b;
   border-radius: 7px;
+  outline: none !important;
 
   position: absolute;
   top: 5px;
   right: 5px;
   padding: 5px;
-
-  outline: none !important;
 }
 
 .deleteBtn.favorite {

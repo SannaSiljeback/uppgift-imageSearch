@@ -2,22 +2,16 @@ nav {
     display: flex;
     justify-content: end;
     align-items: center;
-
 }
 
 ul {
     list-style: none;
     display: flex;
     padding: 0;
-    margin-right: 30px;
-    /* justify-items: space-between; */
-    
-
+    margin-right: 30px;   
 }
 
-li {
-    
+li {   
     padding-right: 10px;
     padding: 20px
-
 }
