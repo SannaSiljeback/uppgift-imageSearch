@@ -53,7 +53,6 @@ h1 {
   box-shadow: 0 0 5px #183a39;
 }
 
-
 @media screen and (max-width: 1400px) {
   .deleteBtn {
     height: 33px;
@@ -76,7 +75,6 @@ h1 {
 
   h1 {
     font-size: 2em;
-  
   }
 }
 
@@ -88,7 +86,6 @@ h1 {
 
   h1 {
     font-size: 1.7em;
-  
   }
 }
 
@@ -100,6 +97,5 @@ h1 {
 
   h1 {
     font-size: 1.5em;
-  
   }
 }
